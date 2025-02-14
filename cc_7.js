@@ -20,3 +20,28 @@ let calculateHourlyWage = function(salary, hoursPerWeek){       //declared a fun
 
 console.log(`Hourly Wage: $${calculateHourlyWage(52000, 40)}`);    //logged the function expression output using test data // Expected output: "Hourly Wage: $25.00"
 console.log(`Hourly Wage: $${calculateHourlyWage(75000, 35)}`);    // Expected output: "Hourly Wage: $41.21"
+
+//Task 3: Arrow Function
+
+const calculateLoyaltyDiscount = (amount, years) => {       //declared an arrow function with 2 variables 
+    let discount = 0;                                       //declared a variable discount and set it to 0 to store the discount value for each category
+
+    if (years >= 5) {                                       //used if else stetement to assign the right discount based on the number of years
+        discount = 0.15;
+
+    }else if (years >=3) {
+        discount = 0.10;
+
+    }else {
+        discount = 0.05;
+    };
+        
+    let discountPrice = amount - (amount * discount);       //used the formula to calculate discounted price
+    return(discountPrice.toFixed(2))
+
+};
+console.log(`Discounted Price: $${calculateLoyaltyDiscount(100, 6)}`);  //logged the function output using test data    // Expected output: "Discounted Price: $85.00"
+console.log(`Discounted Price: $${calculateLoyaltyDiscount(200, 2)}`);      // Expected output: "Discounted Price: $190.00"
+
+
+
