@@ -43,5 +43,27 @@ const calculateLoyaltyDiscount = (amount, years) => {       //declared an arrow 
 console.log(`Discounted Price: $${calculateLoyaltyDiscount(100, 6)}`);  //logged the function output using test data    // Expected output: "Discounted Price: $85.00"
 console.log(`Discounted Price: $${calculateLoyaltyDiscount(200, 2)}`);      // Expected output: "Discounted Price: $190.00"
 
+//Task 4: Parameters and Arguments
 
+function calculateShippingCost(weight, location, expedited = false){    //declared a function with 1 string, 1 numeric, and 1 boolean variables
+
+    let shippingCost = 0;                                               //declared a variable to store the shipping cost value for the functions
+
+    if (location === "USA") {                                           //used if else if to check for country name
+        shippingCost = 5 + (.5 * weight);                               
+                                                                        //shipping cost = country name default price + weight multiplied by the country specific weight percentage  
+    } else if (location === "Canada"){
+        shippingCost = 10 + (.7 * weight);
+    }
+
+    if (expedited){                                                 //another if stetement which sets expedited = true; if true you have to pay additional $10 fee
+        shippingCost += 10;
+    }
+
+    return shippingCost.toFixed(2);                             //returned function output and used toFixed to round the output to 2 decimal places
+
+};
+
+console.log(`Your shipping cost: $${calculateShippingCost(10, "USA", true)}`);      //logged the function output 
+console.log(`Your shipping cost: $${calculateShippingCost(5, "Canada", false)}`);
 
