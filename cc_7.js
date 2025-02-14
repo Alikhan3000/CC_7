@@ -92,3 +92,21 @@ console.log(`Transactions over $1000: $${filterHighValueTransactions(transaction
 
 //logged the output; in this case filterFunction is an arrow function which takes the array and filters transactions above $1000
 // Expected output: [1200, 3000, 2200]
+
+//Task 7: Closures
+
+function createBudgetTracker(){         //declared a function that returns another function 
+    let debit = 0;                      //declared a variable for the initial balance
+
+return function(credit) {               //function of credit to keep a running balance
+    debit = debit - credit;
+    return debit.toFixed(2);            //returned function output with 2 decimals rounded 
+};
+
+}
+
+let budget = createBudgetTracker();
+
+
+console.log(`Current Balance: ${budget(300)}`); //logged the function output using test data // Expected output: "Current Balance: -$300"
+console.log(`Current Balance: ${budget(200)}`); // Expected output: "Current Balance: -$500"
