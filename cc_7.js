@@ -67,3 +67,13 @@ function calculateShippingCost(weight, location, expedited = false){    //declar
 console.log(`Your shipping cost: $${calculateShippingCost(10, "USA", true)}`);      //logged the function output 
 console.log(`Your shipping cost: $${calculateShippingCost(5, "Canada", false)}`);
 
+//Task 5: Returning Values
+
+function calculateLoanInterest(principal, rate, years){     //declared a function with 3 variables 
+
+    let interest = principal * rate * years;                //used the formula to calculate simple interest
+    return interest.toFixed(2)                              //returned function output with 2 rounded decimals
+};
+
+console.log(`Total Interest: $${calculateLoanInterest(1000, 0.05, 3)}`); // Expected output: "Total Interest: $150.00"
+console.log(`Total Interest: $${calculateLoanInterest(5000, 0.07, 5)}`); // Expected output: "Total Interest: $1750.00"
